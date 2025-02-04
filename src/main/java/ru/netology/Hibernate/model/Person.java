@@ -10,21 +10,13 @@ import lombok.*;
 @Entity
 @Table(name = "Persons")
 public class Person {
-    @Id
-    @Column(nullable = false)
-    private String name;
 
-    @Id
-    @Column(nullable = false)
-    private String surname;
+    @EmbeddedId
+    private PersonId personId;
 
-    @Id
-    @Column(length = 200)
-    private int age;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-    @Column
-    private String phone_number;
-
-    @Column(nullable = false, length = 1024)
-    private String city_of_living;
+    @Column(name = "city_of_living", nullable = false, length = 1024)
+    private String city;
 }
