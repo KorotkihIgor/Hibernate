@@ -27,4 +27,7 @@ public class UserSevice {
         return userRepository.findByPersonIdAgeLessThanOrderByPersonIdAge(age);
     }
 
+    public List<Person> getPhoneNumber(String phoneNumber) {
+        return userRepository.findByPhoneNumber(phoneNumber);
+    }
 }
